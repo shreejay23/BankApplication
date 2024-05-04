@@ -1,19 +1,21 @@
 package com.project.bankApplication.api.model;
 
+import org.springframework.http.HttpStatus;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Error {
 
     private String message;
-    private Integer code;
+    private HttpStatus code;
 
     public Error() {
         message = "/";
-        code = 404;
+        code = HttpStatus.NOT_FOUND;
     }
 
-    public Error(String message, Integer code) {
+    public Error(String message, HttpStatus code) {
         this.message = message;
         this.code = code;
     }
@@ -33,11 +35,11 @@ public class Error {
         this.message = message;
     }
 
-    public Integer getCode() {
+    public HttpStatus getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(HttpStatus code) {
         this.code = code;
     }
 }
